@@ -10,8 +10,11 @@
 #include <algorithm>
 #include <cctype>
 #include <iostream>
+#include <stdexcept>    
 
 using namespace std;
+
+void printResult(double res);
 
 int main() {
     ios_base::sync_with_stdio(false);
