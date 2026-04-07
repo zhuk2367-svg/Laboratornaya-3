@@ -2,6 +2,7 @@
 #include "../include/utils.h"
 #include <stdexcept>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -56,7 +57,7 @@ double BinaryNode::eval(const map<string, double>& vars) const {
     if (op == '-') return l - r;
     if (op == '*') return l * r;
     if (op == '/') {
-        if (l == 0 && r == 0) throw runtime_error("ERROR Domain error: 0/0 is undefined");
+        if (r == 0.0) throw runtime_error("ERROR Domain error: anything/0.0 is undefined");
         return l / r;
     }
     if (op == '^') {
@@ -136,7 +137,7 @@ double FuncNode::eval(const map<string, double>& vars) const {
     if (name == "tan") return tan(v);
     if (name == "exp") return exp(v);
     if (name == "log") {
-        if (v < 0) throw runtime_error("ERROR Domain error: log(x) requires x >= 0");
+        if (v <= 0) throw runtime_error("ERROR Domain error: log(x) requires x >= 0");
         return log(v);
     }
     if (name == "sqrt") {
