@@ -1,4 +1,6 @@
 #include "../include/lexer.h"
+#include <stdexcept>
+#include <string>
 
 char Lexer::peek() const { 
     return idx < source.length() ? source[idx] : '\0'; 
