@@ -1,4 +1,4 @@
-Вот мои тесты, как компилировать с ними? @echo off
+@echo off
 setlocal enabledelayedexpansion
 
 echo ======================================
